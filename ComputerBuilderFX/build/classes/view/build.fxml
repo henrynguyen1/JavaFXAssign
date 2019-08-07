@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.BuildController"
+    alignment="center" spacing="10" prefWidth="400" styleClass="root">
+
+	<stylesheets>
+		<URL value="@computerbuilder.css" />
+	</stylesheets>
+        
+        <TableView fx:id='buildTv' items="${controller.build.parts}">
+        <placeholder><Label text="Nothing in Current build."/></placeholder> 
+        <columns> 
+            <TableColumn text="Type">
+            <cellValueFactory><PropertyValueFactory property="type"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Name">
+            <cellValueFactory><PropertyValueFactory property="name"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="priceClm" text="Price"/>
+        </columns> 
+    </TableView>
+    
+    <HBox alignment="CENTER_RIGHT" spacing="10">
+        <Text fx:id="priceTxt" text="Total: $0.00"/>
+    </HBox>
+    
+    <VBox alignment="center_left" spacing="10">
+        <Button fx:id="checkBuildBtn" text="Check Build" onAction="#handleCheckBuild"/>
+        <Button fx:id="removePartBtn" disable="true" text="Remove Selected from Build" onAction="#handleRemovePart"/>
+        <Button text="Close" onAction="#handleClose"/>
+    </VBox>
+    
+</VBox>
+

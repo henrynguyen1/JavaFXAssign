@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.ComputerBuilderController">
+
+    <stylesheets>
+        <URL value="@computerbuilder.css"/>
+    </stylesheets>
+    
+<GridPane alignment="center" hgap="10" vgap="10" prefWidth="400"
+    styleClass="root">
+    <ImageView GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2">
+        <image>
+            <Image url="@parts.jpg"/>
+        </image>
+    </ImageView>
+    <HBox alignment="center" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2">
+        <Label text="${'Computer Builder'}" styleClass="h1"/>
+    </HBox>
+    <HBox alignment="top_center" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="2">
+        <Button text="${'View\nCatalogue'}" styleClass="largeButton" onAction="#handleViewCatalogue"/>
+        <Button text="${'View\nBuild'}" styleClass="largeButton" onAction="#handleViewBuild"/>
+    </HBox>
+    <HBox alignment="bottom_center" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2">
+        <Button text="Quit" styleClass="button" onAction="#handleQuit"/>
+    </HBox>
+
+   
+
+</GridPane>
+</VBox>
